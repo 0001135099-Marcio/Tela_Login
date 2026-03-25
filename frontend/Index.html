@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Sistema de Acesso</title>
+</head>
+<body>
+
+    <div class="container">
+        <div id="loginBox" class="fade-in">
+            <form id="loginForm">
+                <h2>Login</h2>
+                <input type="email" id="loginEmail" placeholder="E-mail" required>
+                <input type="password" id="loginPassword" placeholder="Senha" required>
+                <button type="submit" class="btn-main">Entrar</button>
+                <p>Não tem conta? <a href="#" onclick="toggleForm()">Cadastre-se</a></p>
+            </form>
+        </div>
+
+        <div id="registerBox" class="hidden">
+            <form id="registerForm">
+                <h2>Criar Conta</h2>
+                <input type="text" id="regName" placeholder="Nome Completo" required>
+                <input type="email" id="regEmail" placeholder="E-mail" required>
+                <input type="password" id="regPassword" placeholder="Senha" required>
+                <small>Mínimo 6 caracteres, letras e números.</small>
+                <button type="submit" class="btn-main">Cadastrar</button>
+                <p>Já tem conta? <a href="#" onclick="toggleForm()">Faça Login</a></p>
+            </form>
+        </div>
+
+        <div id="dashboardBox" class="hidden">
+            <h2>Bem-vindo(a), <span id="userNameDisplay"></span>!</h2>
+            <p>Você está autenticado no sistema.</p>
+            <button onclick="logout()" class="btn-main btn-logout">Sair</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

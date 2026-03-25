@@ -1,0 +1,157 @@
+/* 1. Reset e Configurações Gerais */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body { 
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+    background-color: #f0f2f5; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+}
+
+/* 2. Container Principal */
+.container { 
+    background: #ffffff; 
+    padding: 40px; 
+    border-radius: 12px; 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
+    width: 100%;
+    max-width: 400px; 
+    text-align: center;
+}
+
+/* 3. Utilitários de Visibilidade e Animação */
+.hidden { 
+    display: none !important; 
+}
+
+.fade-in {
+    animation: fadeInAnimation 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeInAnimation {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 4. Tipografia */
+h2 { 
+    color: #1c1e21; 
+    margin-bottom: 20px; 
+    font-size: 24px;
+}
+
+p { 
+    font-size: 14px; 
+    color: #606770; 
+    margin-top: 15px; 
+}
+
+a { 
+    color: #1877f2; 
+    text-decoration: none; 
+    font-weight: 600; 
+}
+
+a:hover { 
+    text-decoration: underline; 
+}
+
+small {
+    display: block;
+    margin-top: -10px;
+    margin-bottom: 15px;
+    text-align: left;
+    color: #8a8d91;
+}
+
+/* 5. Formulários e Inputs */
+form { 
+    display: flex; 
+    flex-direction: column; 
+}
+
+input { 
+    margin-bottom: 15px; 
+    padding: 14px; 
+    border: 1px solid #dddfe2; 
+    border-radius: 6px; 
+    font-size: 16px;
+    background-color: #f5f6f7;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+    border-color: #1877f2;
+    background-color: #fff;
+    box-shadow: 0 0 0 2px #e7f3ff;
+    outline: none;
+}
+
+/* 6. Botões e Estado de Carregamento (Spinner) */
+.btn-main { 
+    padding: 14px; 
+    background-color: #1877f2; 
+    color: white; 
+    border: none; 
+    border-radius: 6px; 
+    cursor: pointer; 
+    font-size: 18px; 
+    font-weight: bold;
+    transition: background-color 0.3s;
+    position: relative;
+}
+
+.btn-main:hover { 
+    background-color: #166fe5; 
+}
+
+.btn-main:disabled {
+    background-color: #89b9f7;
+    cursor: not-allowed;
+    color: transparent; /* Esconde o texto para mostrar o spinner */
+}
+
+/* O Spinner (Círculo Girando) */
+.btn-main:disabled::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin-top: -10px;
+    margin-left: -10px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* 7. Dashboard (Área Logada) */
+#dashboardBox {
+    padding: 20px 0;
+}
+
+#userNameDisplay {
+    color: #1877f2;
+    font-weight: bold;
+}
+
+.btn-logout {
+    background-color: #f02849 !important;
+    margin-top: 20px;
+}
+
+.btn-logout:hover {
+    background-color: #d2213f !important;
+}
